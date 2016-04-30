@@ -8,7 +8,7 @@ angular.module('myApp.qr', ['qrScanner', 'ngRoute'])
             controller: 'QrCtrl'
         });
     }])
-    .controller('QrCtrl', function($scope, $http, $location, $cookies) {
+    .controller('QrCtrl', function($scope, $http, $location, $cookies, $timeout) {
         $scope.onSuccess = function() {
             var audio = new Audio('qr/audio/beep.mp3');
             audio.play();
@@ -18,7 +18,7 @@ angular.module('myApp.qr', ['qrScanner', 'ngRoute'])
                 })
                 .success(function(data, status, headers, config) {
                     $cookies.put('KidAuth', 'true');
-                    $location.path('/home');
+                    $timeout(function() {$location.path('/home')}, 300);
                 })
                 .error(function(data, status, headers, config) {
                     $cookies.put('KidAuth', 'false');

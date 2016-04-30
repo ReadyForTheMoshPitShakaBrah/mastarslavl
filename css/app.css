@@ -1,10 +1,5 @@
-
-@font-face {
-    font-family: GothamProReg; /* Гарнитура шрифта */
-    src: url(fonts/GothamPro.ttf); /* Путь к файлу со шрифтом */
-   }
 .pdd img {
-   margin-bottom: 30px;
+   margin-bottom: 10px;
 }
 .pdd {
    text-align: center;
@@ -13,9 +8,8 @@
    padding-left: 10%;
    padding-right: 10%;
 }
-.result {
-   font-size: 3em;
-   margin-top: 200px;
+.pdd div {
+   margin-bottom: 30px;
 }
 .img-thumbnail {
    padding: 10px;
@@ -41,11 +35,6 @@
    background-color: RGBA(255, 255, 255, 0.5);
    border-color: white;
 }
-.currentPage h3 {
-   color: white;
-   font-size: 16px;
-   font-family: GothamProReg;
-}
 #LoginPage ul {
    list-style: none;
    text-align: center;
@@ -62,6 +51,7 @@
    height: 70px;
 }
 .AcceptButton button {
+   top: 0px;
    color: black;
    font-size: 22px;
    width: 300px;
@@ -76,4 +66,23 @@
 qr-scanner {
    margin-top: 10%;
    margin-left: calc(50% - 300px);
+}
+#result {
+   text-align: center;
+   list-style: none;
+   line-height: 100px;
+}
+.option {
+   font-size: 20px;
+   padding-top: 20px;
+   height: 70px;
+   cursor: pointer;
+   border: 3px;
+   border-style: solid;
+}
+.choosen {
+   background-color: red;
+}
+.unchoosen {
+   background-color: white;
 }

@@ -10,6 +10,21 @@ angular.module('myApp.home', ['ngRoute', 'ngCookies'])
 }])
 
 .controller('HomeCtrl', function($scope, $rootScope, $cookies, $location) {
+   moment.locale('ru');
+   $rootScope.starttime = moment().format('LTS');
+   $rootScope.endtime = '__ | __ | __';
+   $rootScope.isAuth = true;
+   $rootScope.profile = {
+      firstname: 'Иванова',
+      lastname: 'Ольга',
+      age: 17,
+      avatar: 'https://s-media-cache-ak0.pinimg.com/736x/6a/78/5b/6a785b211d6ab7115dd5e1aa8f5280db.jpg'
+   };
+   $scope.GoToLogin = function() {
+      $rootScope.profile = '';
+      $rootScope.isAuth = false;
+      $location.path('/login');
+   }
    $scope.ApplyAnswer = false;
    $scope.check = function (data) {
       $scope.myChoose = data;
@@ -64,7 +79,10 @@ angular.module('myApp.home', ['ngRoute', 'ngCookies'])
             $scope.currentquestionnumber++;
             $scope.currentquestion = $scope.questions[$scope.currentquestionnumber-1];
          }
-         else $scope.showalert();
+         else {
+            $rootScope.endtime = moment().format('LTS');
+            $scope.showalert();
+         }
       }
       else {
          $scope.ApplyAnswer = false;
@@ -72,7 +90,10 @@ angular.module('myApp.home', ['ngRoute', 'ngCookies'])
             $scope.currentquestionnumber++;
             $scope.currentquestion = $scope.questions[$scope.currentquestionnumber-1];
          }
-         else $scope.showalert();
+         else {
+            $rootScope.endtime = moment().format('LTS');
+            $scope.showalert();
+         }
       };
    };
 });

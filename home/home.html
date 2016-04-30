@@ -1,9 +1,9 @@
 <div class="pdd" ng-hide="showresult">
    <h1><small>Вопрос {{currentquestionnumber}} из {{questionscount}}</small></h1>
    </br>
-   <div class="col-sm-offset-1 col-sm-10 well">{{currentquestion.question}}</div>
-   </br>
    <img class="col-sm-offset-1 col-sm-10 img-thumbnail" src="{{currentquestion.url}}" alt="">
+   </br>
+   <div class="col-sm-offset-1 col-sm-10"><h3>{{currentquestion.question}}</h3></div>
    </br>
    <div class="options">
          <div id="btn1" class="btn btn-default col-sm-offset-1 col-sm-4 option option1" ng-click="check(currentquestion.option1)">{{currentquestion.option1}}</div>
@@ -13,7 +13,10 @@
    </div>
    </br>
 </div>
-<div id="checkit" class="btn btn-default" ng-show="ApplyAnswer" ng-click="NextQuestion(myChoose)">Подтвердить</div>
-<div class="alert {{result}} col-sm-offset-1 col-sm-10 pdd result" ng-show="showresult">
-   Вы ответили правильно на {{correctanswers}} из {{questionscount}} вопросов.
+<div id="checkit" class="btn btn-default option" ng-show="ApplyAnswer" ng-click="NextQuestion(myChoose)">Подтвердить</div>
+<div ng-show="showresult">
+   <ul id="result">
+      <li><div class="alert">Вы ответили правильно на {{correctanswers}} вопросов из {{questions.length}}</div></li>
+      <li><div class="btn btn-default option" type="button" name="button" ng-click="GoToLogin()">Завершить тест</div></li>
+   </ul>
 </div>

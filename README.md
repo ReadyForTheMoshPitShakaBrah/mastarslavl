@@ -1,2 +1,9 @@
 # mastarslavl
-Masterslavl
+Мастерславль - модуль ПДД
+
+#Как запустить сервер:
+- Открыть консоль в папке
+- Написать node auth.server.js
+
+#Как зайти: 
+- http://localhost:8080

@@ -1,0 +1,19 @@
+<div class="pdd" ng-hide="showresult">
+   <h1><small>Вопрос {{currentquestionnumber}} из {{questionscount}}</small></h1>
+   </br>
+   <div class="col-sm-offset-1 col-sm-10 well">{{currentquestion.question}}</div>
+   </br>
+   <img class="col-sm-offset-1 col-sm-10 img-thumbnail" src="{{currentquestion.url}}" alt="">
+   </br>
+   <div class="options">
+         <div id="btn1" class="btn btn-default col-sm-offset-1 col-sm-4 option option1" ng-click="check(currentquestion.option1)">{{currentquestion.option1}}</div>
+         <div id="btn2" class="btn btn-default col-sm-offset-2 col-sm-4 option option2" ng-click="check(currentquestion.option2)">{{currentquestion.option2}}</div>
+         <div id="btn3" class="btn btn-default col-sm-offset-1 col-sm-4 option option3" ng-click="check(currentquestion.option3)">{{currentquestion.option3}}</div>
+         <div id="btn4" class="btn btn-default col-sm-offset-2 col-sm-4 option option4" ng-click="check(currentquestion.option4)">{{currentquestion.option4}}</div>
+   </div>
+   </br>
+</div>
+<div id="checkit" class="btn btn-default" ng-show="ApplyAnswer" ng-click="NextQuestion(myChoose)">Подтвердить</div>
+<div class="alert {{result}} col-sm-offset-1 col-sm-10 pdd result" ng-show="showresult">
+   Вы ответили правильно на {{correctanswers}} из {{questionscount}} вопросов.
+</div>

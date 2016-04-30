@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Angular Authentication</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+	<script src="bower_components/angular-qr-scanner/qr-scanner.js" charset="utf-8"></script>
+	<script src="bower_components/angular-qr-scanner/src/jsqrcode-combined.min.js" charset="utf-8"></script>
+	<script src="app.js"></script>
+	<script src="login/login.js"></script>
+	<script src="home/home.js"></script>
+	<script src="qr/qr.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/app.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/simple-sidebar.css" media="screen" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body  ng-app="myApp">
+
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper" ng-controller="myAppCtrl">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#"><img src="images/logo.png" width="85%" alt=""></a>
+				</li>
+				<li>
+					<div class="currentPage">
+						<h3>Тест ПДД</h3>
+					</div>
+				</li>
+				<li>
+					<div class="userAvatar"><img src="{{user.avatar}}" width="100px" height="100px" alt=""></div>
+				</li>
+				<li>
+					<div class="userInfo">
+						<h3><small>{{profile.firstname}} {{profile.lastname}}</small></h3>
+						<h3><small>{{profile.age}}</small></h3>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+		       <div class="row">
+			          <div class="col-lg-9 col-md-11 col-sm-12" ng-view>
+			          </div>
+			      </div>
+		   </div>
+		</div>
+</body>
+
+</html>
